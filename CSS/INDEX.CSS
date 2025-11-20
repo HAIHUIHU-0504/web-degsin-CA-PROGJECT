@@ -1,0 +1,294 @@
+
+/*CSS reset*/
+* {                                         
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*consistant color scheme*/
+:root {
+  --color-primary: rgb(0, 170, 250);
+  --color-secondary: #ffffff;
+  --color-text:white;
+  --color-text-light: #000000;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+main { grid-area: main; }
+/*set body*/
+body{ 
+    background-color: var(--color-secondary);    
+    font-family: Arial, Helvetica, sans-serif;
+    padding :0;
+    margin:0; 
+    }
+/*header style*/
+header {
+    grid-area: header;
+    background-color:var(--color-primary);
+    color:var(--color-text);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* nav link style*/
+nav a {
+    color: var(--color-text)    ;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: large;
+}
+
+/*link hover*/
+nav a:hover {
+    background: linear-gradient(45deg, #fd2e17, #fff707);
+    background-clip: text;
+    color: transparent;
+}
+
+/*section box style*/
+section {
+    padding: 5rem 2rem;
+}
+
+.logo { background: linear-gradient(45deg, #fd2e17, #fff707);
+    background-clip: text;
+    color: transparent; }
+
+/*hero box sytle*/
+.hero {
+    background-image: url("../img/hero.jpg");  /* bacground pic */
+    background-size: cover;                             /* cover all the area automatily */
+    background-position: center;                        /* picture center */
+    background-repeat: no-repeat;                       /* background no repeat */
+    color: var(--color-text);                                     /* content white */
+    height: 70vh;                                       /* height is 70% screen */
+    text-align: center;
+    padding: 6rem 2rem;                                 /*gap between content and boarder*/
+}
+
+/*hero box content style*/
+.hero h1 {
+    font-size: 6rem;
+}
+
+/*about area style, set for <div>*/
+
+.about p {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 1500px;
+  margin: 0 auto 2rem auto;
+}
+
+.about {
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.about div {
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.about h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+
+/*destination & contact area style, set for <div>*/
+.destinations {
+    color: var(--color-secondary);
+    background: linear-gradient(to bottom,      
+        var(--color-secondary) 0%,     
+        var(--color-primary) 20%,   
+        var(--color-primary) 80%,   
+        var(--color-secondary) 100%     
+         );
+    margin-bottom: 1rem;
+    display: flex;          
+    flex-direction: column; 
+    justify-content: center;
+    padding: 4rem 2rem;   
+    text-align: center;     
+}
+.destinations h2 {
+    color: var(--color-text);
+    font-weight: bold;
+    font-size: 3rem;
+}
+.destinations p {
+    color: var(--color-text);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.destinations-gallery {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1.5rem; 
+margin-top: 2rem;
+text-align: center;
+}
+
+.destinations-gallery a {
+text-decoration: none;
+color: var(--color-text-light);
+background-color: var(--color-secondary);
+border-radius: 10px;
+overflow: hidden;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destinations-gallery a:hover {
+transform: translateY(-5px);
+box-shadow: 0 5px 15px var(--color-secondary);
+}
+
+.destinations-gallery img {
+width: 100%;
+height: 200px;
+object-fit: cover; 
+}
+
+.destinations-gallery h3 {
+padding: 1rem;
+font-size: 1.1rem;
+}
+
+.more a{
+    margin-top: 2rem;
+    margin-bottom: auto;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    color: var(--color-text);
+    text-decoration: none;
+    float: right;
+}
+.more a:hover {
+transform: translateY(-5px);
+box-shadow: 0 5px 15px var(--color-secondary);
+}
+
+/*questions area style*/
+.questions {
+    background-color:transparent;
+    width: 80%;
+    margin: 2rem auto;
+}
+
+.accordion-body {
+    text-align: left;
+}
+
+.contactus{
+    background: linear-gradient(
+        to bottom,    
+        var(--color-secondary) 20%,      
+        var(--color-primary) 100% 
+    );
+    height: auto;     
+    margin: 0;         
+    padding: 4rem 2rem; 
+    text-align: center;
+
+}
+
+.link {
+    color:var(--color-text);
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.link:hover {
+    background: linear-gradient(45deg, #fd2e17, #fff707);
+    background-clip: text;
+    color: transparent;
+}
+
+footer {
+    grid-area: footer;
+    background: var(--color-primary);
+    color: var(--color-text);
+    padding: 1rem;
+    text-align: center;
+}
+
+/*  RWD */
+/* tablet <= 992px */
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav a {
+    text-align: center;
+    display: block;
+    margin: 0;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+  }
+  .about h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* phone<768px */
+@media (max-width: 768px) {
+  .hero {
+    height: 50vh;
+    padding: 3rem 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .about p {
+    font-size: 1rem;
+  }
+  .destinations-gallery {
+    grid-template-columns: 1fr; /* display by single col */
+  }
+  footer {
+    font-size: 0.9rem;
+  }
+}
+
+/* samll screen < 480px */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+  .link {
+    font-size: 1.2rem;
+  }
+}
+
+
